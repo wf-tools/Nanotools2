@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4D935FEE-035D-4A8E-96EF-1109C80BE8AD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NanoTools2</RootNamespace>
+    <AssemblyName>NanoTools2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>top.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WfComponent">
+      <HintPath>..\..\WfComponent\WfComponent\bin\Debug\WfComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Process\CallAssemble.cs" />
+    <Compile Include="Process\CallBase.cs" />
+    <Compile Include="Process\CallGuppy.cs" />
+    <Compile Include="Process\CallMinimap2.cs" />
+    <Compile Include="Process\CallSamtools.cs" />
+    <Compile Include="Process\CallSVIM.cs" />
+    <Compile Include="Process\ICallProcess.cs" />
+    <Compile Include="Process\Properties\CallAssembleOptions.cs" />
+    <Compile Include="Process\Properties\CallGuppyOption.cs" />
+    <Compile Include="Process\Properties\CallVariantOptions.cs" />
+    <Compile Include="Utils\MessageValues.cs" />
+    <Compile Include="Utils\WslImportCheck.cs" />
+    <Compile Include="ViewModels\Properties\AnalysesAssembleProperties.cs" />
+    <Compile Include="ViewModels\Properties\AnalysesConvertProperties.cs" />
+    <Compile Include="ViewModels\Properties\AnalysesMappingProperties.cs" />
+    <Compile Include="ViewModels\Properties\AnalysesVariationsProperties.cs" />
+    <Compile Include="ViewModels\Properties\AnalysesProperties.cs" />
+    <Compile Include="ViewModels\Properties\ViewToolTips.cs" />
+    <Compile Include="Views\AssembleView.xaml.cs">
+      <DependentUpon>AssembleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MappingView.xaml.cs">
+      <DependentUpon>MappingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VariationsView.xaml.cs">
+      <DependentUpon>VariationsView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\AnalysesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConvertView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AssembleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utils\Approbate.cs" />
+    <Compile Include="Utils\ConstantValues.cs" />
+    <Compile Include="Utils\EnvInfo.cs" />
+    <Compile Include="Utils\Fasta.cs" />
+    <Compile Include="Utils\FileUtils.cs" />
+    <Compile Include="ViewModels\AnalysesViewModel.cs" />
+    <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Base\ViewModelNotifyDataError.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\AnalysesView.xaml.cs">
+      <DependentUpon>AnalysesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConvertView.xaml.cs">
+      <DependentUpon>ConvertView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\MappingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VariationsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StyleUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.Unity" Version="7.2.0.1422" />
+    <PackageReference Include="WindowsAPICodePack-Shell">
+      <Version>1.1.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\xfce_c.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 および x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\nanotools-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\nanotools-top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="top.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="img\loading.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>mkdir $(TargetDir)bin
+mkdir $(TargetDir)Data
+mkdir $(TargetDir)logs
+delete $(TargetDir)logs\*
+
+echo external programs
+copy /Y $(SolutionDir)..\..\external_program\hdf5dll\* $(TargetDir)
+mkdir $(TargetDir)bin\minimap2 
+xcopy /Q /E /Y  $(SolutionDir)..\..\external_program\minimap2 $(TargetDir)bin\minimap2
+mkdir $(TargetDir)bin\samtools
+xcopy /Q /E /Y  $(SolutionDir)..\..\external_program\samtools_v1.9 $(TargetDir)bin\samtools
+mkdir $(TargetDir)bin\IGV_Win
+xcopy /Q /E /Y  $(SolutionDir)..\..\external_program\IGV_Win $(TargetDir)bin\IGV_Win
+mkdir $(TargetDir)bin\jre
+xcopy /Q /E /Y  $(SolutionDir)..\..\external_program\jre $(TargetDir)bin\jre
+mkdir $(TargetDir)bin\ubuntu
+xcopy /C /E /I /Y $(SolutionDir)..\..\external_program\ubuntu $(TargetDir)bin\ubuntu
+
+mkdir $(TargetDir)bin\svim-result
+xcopy /C /E /I /Y $(SolutionDir)..\..\out_viewer\svim-result     $(TargetDir)bin\svim-result
+copy  /Y $(SolutionDir)..\..\out_viewer\assemble.hta  $(TargetDir)bin
+copy  /Y $(SolutionDir)..\..\out_viewer\pcinfo.hta $(TargetDir)bin
+copy  /Y $(SolutionDir)..\..\out_viewer\*.ico $(TargetDir)bin
+
+echo doc merge
+mkdir $(TargetDir)docs
+copy /Y $(SolutionDir)docs\manual-nanotools.pdf $(TargetDir)docs\
+copy /Y $(SolutionDir)docs\setup-nanotools.pdf $(TargetDir)docs\
+
+echo wsl-installer data copy
+copy  /Y $(SolutionDir)..\WfComponentInstaller\WfComponentInstaller\bin\Debug\WfComponentInstaller.exe  $(TargetDir)
+echo copy /Y $(SolutionDir)..\WfComponentInstaller\Parts\               $(TargetDir)Data
+echo copy /Y $(SolutionDir)..\..\external_program\Ubuntu-18.04-*     $(TargetDir)data
+
+</PreBuildEvent>
+  </PropertyGroup>
+</Project>
